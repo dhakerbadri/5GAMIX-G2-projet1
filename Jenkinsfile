@@ -7,7 +7,7 @@ pipeline {
         stage ('Checkout to SCM') {
             steps {
                 git branch: 'dhakerBADRI-5GAMIX-G2', url: 'https://github.com/dhakerbadri/5GAMIX-G2-projet1.git'
-                sh 'git checkout khaled'
+                sh 'git checkout dhakerBADRI-5GAMIX-G2'
                 sh 'ls -la'
                 sh "echo 'Hello World'"
             }
