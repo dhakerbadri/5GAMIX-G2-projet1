@@ -65,5 +65,6 @@ public class SkierRestController {
     public List<Skier> getAllSkiers(){
         return skierServices.retrieveAllSkiers();
     }
+    //abcd
 
 }
