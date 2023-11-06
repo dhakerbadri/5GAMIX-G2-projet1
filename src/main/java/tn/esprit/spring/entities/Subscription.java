@@ -5,14 +5,10 @@ import java.time.LocalDate;
 
 import javax.persistence.*;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 @Getter
+@Builder
 @Setter
 @ToString
 @AllArgsConstructor
