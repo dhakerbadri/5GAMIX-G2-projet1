@@ -68,6 +68,15 @@
 				<configuration>
 					<excludes>
 						<exclude>
+							<id>repackage</id>
+							<goals>
+								<goal>repackage</goal>
+							</goals>
+							<configuration>
+								<finalName>Ski</finalName>
+							</configuration>
+						</exclude>
+						<exclude>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
 						</exclude>
