@@ -29,7 +29,7 @@ class SubscriptionServicesImplTest {
     @Test
     @DisplayName("Get Subscription by id")
     void test_when_subsc_success(){
-        
+
         //Mocking
         Subscription subscription =getMockSubc();
         Mockito.when(subscriptionRepository.findById(1L)).thenReturn(Optional.ofNullable(subscription));
