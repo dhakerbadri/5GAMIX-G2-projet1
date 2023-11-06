@@ -66,22 +66,26 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<mainClass>com.example.StationSkiApplication</mainClass>
 					<excludes>
-						<exclude>
-							<id>repackage</id>
-							<goals>
-								<goal>repackage</goal>
-							</goals>
-							<configuration>
-								<finalName>Ski</finalName>
-							</configuration>
-						</exclude>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
 				</configuration>
+				<executions>
+					<execution>
+						<id>repackage</id>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+						<configuration>
+							<finalName>Ski</finalName>
+						</configuration>
+					</execution>
+
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>
@@ -104,10 +108,10 @@
 			</plugin>
 		</plugins>
 	</build>
-<distributionManagement>
-	<repository>
-		<id>deploymentRepo</id>
-		<url>http://localhost:8081/repository/maven-releases/</url>
-	</repository>
-</distributionManagement>
+	<distributionManagement>
+		<repository>
+			<id>deploymentRepos</id>
+			<url>http://localhost:8081/repository/maven-releases/</url>
+		</repository>
+	</distributionManagement>
 </project>
