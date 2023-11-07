@@ -9,9 +9,12 @@ pipeline {
                 sh "echo 'Hello World'"
             }
         }
-        stage ('Build') {
+       stage('Build') {
             steps {
-                sh 'mvn clean package'
+                script {
+                    sh "mvn --version" // Use the specified Maven installation
+                    sh "mvn clean package -DskipTests" // Build your Maven project
+                }
             }
         }
        stage('Run Sonar')  {
