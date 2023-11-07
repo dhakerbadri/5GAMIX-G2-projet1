@@ -14,11 +14,17 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
-        stage('SonarQube Analysis') {
+       stage('Run Sonar')  {
             steps {
-                withSonarQubeEnv('sonarInstallation') {
-                    sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=5GAMIX-G2-projet1 -Dsonar.projectName=\'5GAMIX-G2-projet1\' -Dsonar.projectVersion=1.0  -Dsonar.sources=src/main/java -Dsonar.sourceEncoding=UTF-8 -Dsonar.language=java -Dsonar.java.binaries=target/classes'
+                withCredentials([string(credentialsId: '4598b638-c854-4694-bbfc-a1d716874816', variable: 'SONAR_TOKEN')]) {
+                    sh 'mvn sonar:sonar -Dsonar.host.url=http://192.168.33.10:9000/ -Dsonar.login=$SONAR_TOKEN'
                 }
-               }   }
+            }
+        }
+        stage('Run Tests') {
+            steps {
+                sh 'mvn test'
+            }
+        }
     }
 }
